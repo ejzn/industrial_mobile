@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.FieldOrder" Padding="20, 10, 20, 5">
+<ScrollView Orientation="Vertical">
+		<Grid>
+		    <Grid.RowDefinitions>
+		      <RowDefinition Height="40" />
+
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+
+		      <RowDefinition Height="10" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="10" />
+
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+
+		      <RowDefinition Height="20" />
+		      <RowDefinition Height="40" />
+		    </Grid.RowDefinitions>
+
+		    <Grid.ColumnDefinitions>
+		      <ColumnDefinition Width="Auto" />
+		    </Grid.ColumnDefinitions>
+
+		    <!--- Header -->
+		    <Label  HorizontalOptions="Center"
+       				FontSize="Large" Text="Safety Enhancement Program" 
+       				TextColor="#007AFF"
+       				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+		    <!--Medic Information -->
+		    <Label Text="Date:" 						Grid.Row="1" Grid.Column="0"/>
+           	<DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static x:DateTime.Now}" Grid.Row="1" Grid.Column="1">
+		         <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+		      </DatePicker>
+
+
+           	<Label Text="Job:" 							Grid.Row="2" Grid.Column="0"/>
+           	<Entry x:Name="jobId" Text="TODO"  		Grid.Row="2" Grid.Column="1"/>
+
+           	<Label Text="Medic:" 						Grid.Row="3" Grid.Column="0"/>
+           	<Entry x:Name="medicId" IsEnabled="false"		Grid.Row="3" Grid.Column="1"/>
+
+           	<BoxView Color="Black" 						Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+           		WidthRequest="100" 
+           		HeightRequest="1"
+           		/>
+
+           	<!--Client Information # -->
+           	<Label Text="Client:" 						Grid.Row="7" Grid.Column="0"/>
+           	<Entry x:Name="clientId" Text=""			Grid.Row="7" Grid.Column="1"/>
+
+           	<Label Text="Client Orientations:" 			Grid.Row="8" Grid.Column="0"/>
+           	<Picker x:Name="clientOrientations" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="8" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		            <x:String>11</x:String>
+		            <x:String>12</x:String>
+		            <x:String>13</x:String>
+		            <x:String>14</x:String>
+		            <x:String>15</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Label Text="Site Orientations:" 			Grid.Row="9" Grid.Column="0"/>
+           	<Picker x:Name="siteOrientations" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="9" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		            <x:String>11</x:String>
+		            <x:String>12</x:String>
+		            <x:String>13</x:String>
+		            <x:String>14</x:String>
+		            <x:String>15</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Label Text="Hazards / Work ID's:" 			Grid.Row="10" Grid.Column="0"/>
+           	<Picker x:Name="hazardWorkIds" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="10" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		            <x:String>11</x:String>
+		            <x:String>12</x:String>
+		            <x:String>13</x:String>
+		            <x:String>14</x:String>
+		            <x:String>15</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Label Text="IPS PJA's:" 					Grid.Row="11" Grid.Column="0"/>
+           	<Picker x:Name="ipsPjas" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="11" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		            <x:String>11</x:String>
+		            <x:String>12</x:String>
+		            <x:String>13</x:String>
+		            <x:String>14</x:String>
+		            <x:String>15</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Label Text="3rd Party JSA's:" 				Grid.Row="12" Grid.Column="0"/>
+           	<Picker x:Name="thirdPartyJSAs" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="12" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		            <x:String>11</x:String>
+		            <x:String>12</x:String>
+		            <x:String>13</x:String>
+		            <x:String>14</x:String>
+		            <x:String>15</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Label Text="Safe Work Permit:" 			Grid.Row="13" Grid.Column="0"/>
+           	<Picker x:Name="safeWorkPermits" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="13" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		            <x:String>11</x:String>
+		            <x:String>12</x:String>
+		            <x:String>13</x:String>
+		            <x:String>14</x:String>
+		            <x:String>15</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Label Text="Safety Meetings:" 				Grid.Row="14" Grid.Column="0"/>
+           	<Picker x:Name="safetyMeetings" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="14" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		            <x:String>11</x:String>
+		            <x:String>12</x:String>
+		            <x:String>13</x:String>
+		            <x:String>14</x:String>
+		            <x:String>15</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Button x:Name="submitButton" Text="Submit" 
+           		Clicked="OnSubmit" 
+           		Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" 
+           		BorderColor="#FF9500" 
+           		BackgroundColor="#FF5E3A"
+           		TextColor="White"
+           		BorderWidth="1" />
+
+  		</Grid>
+  	</ScrollView>
+</ContentPage>

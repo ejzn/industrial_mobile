@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.MedicHome">
+
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="70, 20, 20, 20"/>
+     </ContentPage.Padding>
+    <ContentPage.Content>
+    	<ScrollView Orientation="Vertical">
+	        <StackLayout VerticalOptions="FillAndExpand"
+	                     HorizontalOptions="FillAndExpand"
+	                     Orientation="Vertical"
+	                     Spacing="35">
+
+	             <Label  HorizontalOptions="Center"
+       				FontSize="Large" Text="Medic Home" 
+       				TextColor="#007AFF"/>
+       			<Label x:Name="welcomeText" HorizontalOptions="Center"
+       				Text="Welcome"/>
+	                    
+		        <Button x:Name="suppliesRequestButton" Text="Supplies Request" Clicked="OnSuppliesRequestSubmit"  BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
+		        <Button x:Name="equipmentRequest" Text="Equipment Request" Clicked="OnEquipmentRequestSubmit" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
+		        <Button x:Name="billingFormButton" Text="Billing Form" Clicked="OnBillingFormSubmit" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White" />
+		        <Button x:Name="safetyEnhancementButton" Text="Safety Tracking" Clicked="OnSafetyTrackingSubmit" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
+	        </StackLayout>
+        </ScrollView>
+
+	</ContentPage.Content>
+</ContentPage>
