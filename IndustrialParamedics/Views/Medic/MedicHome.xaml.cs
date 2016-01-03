@@ -17,9 +17,9 @@ namespace IndustrialParamedics
 			await Navigation.PushAsync(new FieldOrder());
 
 		}
+
 		void OnEquipmentRequestSubmit (object sender, EventArgs e)
 		{
-
 		}
 		void OnBillingFormSubmit (object sender, EventArgs e)
 		{
@@ -28,6 +28,11 @@ namespace IndustrialParamedics
 		void OnSafetyTrackingSubmit (object sender, EventArgs e)
 		{
 
+		}
+		async void OnlogoutButton (object sender, EventArgs e)
+		{
+			await this.Navigation.PopModalAsync ();
+			App.Parse.LogOutAsync ();
 		}
 
 	}

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.ReportForm" Padding="20, 10, 20, 5">
+<ScrollView Orientation="Vertical">
+		<Grid>
+		    <Grid.RowDefinitions>
+		      <RowDefinition Height="40" />
+
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		     
+		    </Grid.RowDefinitions>
+
+		    <Grid.ColumnDefinitions>
+		      <ColumnDefinition Width="Auto" />
+		    </Grid.ColumnDefinitions>
+
+		    <!--- Header -->
+		    <Label  HorizontalOptions="Center"
+       				FontSize="Large" Text="Customer Reports" 
+       				TextColor="#007AFF"
+       				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+		    <!--Site Information -->
+		    <Label Text="Site:" 						Grid.Row="1" Grid.Column="0"/>
+           	<DatePicker x:Name="date" VerticalOptions="CenterAndExpand" Date="{x:Static x:DateTime.Now}" Grid.Row="1" Grid.Column="1">
+		         <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+		      </DatePicker>
+
+           	
+
+           	<Button x:Name="submitButton" Text="Submit" 
+           		Clicked="OnSubmit" 
+           		Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+           		BorderColor="#FF9500" 
+           		BackgroundColor="#FF5E3A"
+           		TextColor="White"
+           		BorderWidth="1" />
+
+  		</Grid>
+  	</ScrollView>
+</ContentPage>

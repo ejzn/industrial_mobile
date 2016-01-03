@@ -36,6 +36,15 @@
     <Compile Include="Classes\IParseSDK.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Form.cs" />
+    <Compile Include="Views\Customer\CustomerHome.xaml.cs">
+      <DependentUpon>CustomerHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminHome.xaml.cs">
+      <DependentUpon>AdminHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\ReportsForm.xaml.cs">
+      <DependentUpon>ReportsForm.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -60,10 +69,21 @@
     <EmbeddedResource Include="Views\Medic\MedicHome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\CustomerHome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\AdminHome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customer\ReportsForm.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Medic\" />
+    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
 </Project>

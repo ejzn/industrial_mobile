@@ -1,26 +1,14 @@
 ﻿<Properties StartupItem="iOS/IndustrialParamedics.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.1" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="IndustrialParamedics" expanded="True">
-            <Node name="IndustrialParamedics" expanded="True">
-              <Node name="Classes" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Medic" expanded="True">
-                  <Node name="FieldOrder.xaml" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="IndustrialParamedics.Droid" expanded="True">
-              <Node name="ParseSDK.cs" selected="True" />
-            </Node>
-            <Node name="IndustrialParamedics.iOS" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="IndustrialParamedics/Views/Admin/AdminHome.xaml.cs">
+    <Files>
+      <File FileName="iOS/ParseSDK.cs" Line="35" Column="28" />
+      <File FileName="IndustrialParamedics/Views/Admin/AdminHome.xaml.cs" Line="15" Column="18" />
+      <File FileName="IndustrialParamedics/Views/Medic/MedicHome.xaml.cs" Line="32" Column="3" />
+      <File FileName="IndustrialParamedics/Views/HomePage.xaml.cs" Line="33" Column="71" />
+      <File FileName="IndustrialParamedics/Views/Medic/FieldOrder.xaml.cs" Line="13" Column="27" />
+      <File FileName="IndustrialParamedics/Views/Customer/CustomerHome.xaml.cs" Line="34" Column="4" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

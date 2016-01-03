@@ -8,11 +8,10 @@
 		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
-
-		      <RowDefinition Height="10" />
 		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="10" />
 
+		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
@@ -37,29 +36,35 @@
        				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
 		    <!--Medic Information -->
-		    <Label Text="Date:" 						Grid.Row="1" Grid.Column="0"/>
-           	<DatePicker VerticalOptions="CenterAndExpand" Date="{x:Static x:DateTime.Now}" Grid.Row="1" Grid.Column="1">
+		    <Label Text="Week:" 						Grid.Row="1" Grid.Column="0"/>
+           	<DatePicker x:Name="date" VerticalOptions="CenterAndExpand" Date="{x:Static x:DateTime.Now}" Grid.Row="1" Grid.Column="1">
 		         <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
 		      </DatePicker>
 
+           	<Label Text="Medic:" 						Grid.Row="2" Grid.Column="0"/>
+           	<Entry x:Name="medicId" IsEnabled="false"	TextColor="Gray" Grid.Row="2" Grid.Column="1"/>
 
-           	<Label Text="Job:" 							Grid.Row="2" Grid.Column="0"/>
-           	<Entry x:Name="jobId" Text="TODO"  		Grid.Row="2" Grid.Column="1"/>
+           		<Label Text="IPS Job #:" 							Grid.Row="3" Grid.Column="0"/>
+           	<Entry Keyboard="Numeric" x:Name="ipsJobId" Grid.Row="3" Grid.Column="1"/>
 
-           	<Label Text="Medic:" 						Grid.Row="3" Grid.Column="0"/>
-           	<Entry x:Name="medicId" IsEnabled="false"		Grid.Row="3" Grid.Column="1"/>
-
-           	<BoxView Color="Black" 						Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+           	<BoxView Color="Black" 						Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
            		WidthRequest="100" 
            		HeightRequest="1"
            		/>
 
            	<!--Client Information # -->
-           	<Label Text="Client:" 						Grid.Row="7" Grid.Column="0"/>
-           	<Entry x:Name="clientId" Text=""			Grid.Row="7" Grid.Column="1"/>
+           	<Label Text="Client:" 						Grid.Row="6" Grid.Column="0"/>
+           	<Picker x:Name="clientId" 
+           		SelectedIndex="0" HorizontalOptions="FillAndExpand" Grid.Row="6" Grid.Column="1">
+    		</Picker>
 
-           	<Label Text="Client Orientations:" 			Grid.Row="8" Grid.Column="0"/>
-           	<Picker x:Name="clientOrientations" 
+
+
+           	<Label Text="Customer Job #:" 							Grid.Row="7" Grid.Column="0"/>
+           	<Entry Keyboard="Numeric" x:Name="custJobId" Grid.Row="7" Grid.Column="1" TextChanged="custTextChanged"/>
+
+           	<Label Text="Company Orientations:" 			Grid.Row="8" Grid.Column="0"/>
+           	<Picker x:Name="companyOrientations" 
            		SelectedIndex="0" 
            		HorizontalOptions="FillAndExpand" 
            		Grid.Row="8" Grid.Column="1">

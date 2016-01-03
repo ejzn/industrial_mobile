@@ -23,7 +23,8 @@
 		        <Button x:Name="equipmentRequest" Text="Equipment Request" Clicked="OnEquipmentRequestSubmit" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
 		        <Button x:Name="billingFormButton" Text="Billing Form" Clicked="OnBillingFormSubmit" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White" />
 		        <Button x:Name="safetyEnhancementButton" Text="Safety Tracking" Clicked="OnSafetyTrackingSubmit" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
-	        </StackLayout>
+		        <Button x:Name="logoutButton" Text="Logout" Clicked="OnlogoutButton" BorderColor="#0076FF" BorderWidth="1" />
+	         </StackLayout>
         </ScrollView>
 
 	</ContentPage.Content>

@@ -16,10 +16,10 @@
 	                     Orientation="Vertical"
 	                     Spacing="15">
 	            <Image Source="IPSLogo.png" Scale="0.7" />
-	            <Label Text="Email / Username:" />
+	            <Label Text="Customer / User:" />
 	            <Entry x:Name="usernameText" Text="" />
 	            <Label Text="Password" />
-	            <Entry x:Name="passwordText" Text="" />
+	            <Entry IsPassword="true" x:Name="passwordText" Text="" />
 	            <Button x:Name="loginButton" Text="Login" Clicked="OnLogin" BorderColor="#0076FF" BorderWidth="1" />
 	        </StackLayout>
        </ScrollView>

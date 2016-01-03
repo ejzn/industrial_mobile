@@ -1,7 +1,0 @@
-/Users/i843286/Projects/IndustrialParamedics/UITests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/i843286/Projects/IndustrialParamedics/UITests/bin/Debug/IndustrialParamedics.UITests.dll.mdb
-/Users/i843286/Projects/IndustrialParamedics/UITests/bin/Debug/IndustrialParamedics.UITests.dll
-/Users/i843286/Projects/IndustrialParamedics/UITests/obj/Debug/IndustrialParamedics.UITests.dll
-/Users/i843286/Projects/IndustrialParamedics/UITests/obj/Debug/IndustrialParamedics.UITests.dll.mdb
-/Users/i843286/Projects/IndustrialParamedics/UITests/bin/Debug/nunit.framework.dll
-/Users/i843286/Projects/IndustrialParamedics/UITests/bin/Debug/Xamarin.UITest.dll

@@ -15,16 +15,29 @@ namespace IndustrialParamedics
 			if (App.Parse != null && App.Parse.checkLogin ()) {
 				// TODO: Check if they are a medic or not, use sometype of configurations :)
 				App.currentUser = App.Parse.getCurrentUser();
-				Navigation.PushModalAsync(new NavigationPage(new MedicHome ()));
-
+				redirectToLogin ();
 			}
 		}
 
+		private void redirectToLogin () 
+		{
+			if (App.currentUser.role == User.Role.medic) {
+				Navigation.PushModalAsync (new NavigationPage (new MedicHome ()));
+			}
+
+			if (App.currentUser.role == User.Role.customer) {
+				Navigation.PushModalAsync (new NavigationPage (new CustomerHome ()));
+			}
+
+			if (App.currentUser.role == User.Role.admin) {
+				Navigation.PushModalAsync (new NavigationPage (new AdminHome ()));
+			}
+		}
 		private void LoginCompleted(bool result)
 		{
 			if (result) {
 				App.currentUser = App.Parse.getCurrentUser ();
-				Navigation.PushModalAsync (new NavigationPage (new MedicHome ()));
+				redirectToLogin ();
 			} else {
 				DisplayAlert ("Login Error", "We couldn't log you in, check your connectivity or credentials. Please contact mobile@ips.com for help", "OK");
 			}
