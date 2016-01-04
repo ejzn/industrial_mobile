@@ -48,7 +48,12 @@ namespace IndustrialParamedics.iOS
 					roleEnum = User.Role.customer;
 				}
 
-				return new User (ParseUser.CurrentUser.Username, ParseUser.CurrentUser.ObjectId, roleEnum);
+				string customerId = null;
+				if(ParseUser.CurrentUser.ContainsKey("customerId")) {
+					customerId = ParseUser.CurrentUser.Get<string>("customerId");
+				}
+
+				return new User (ParseUser.CurrentUser.Username, ParseUser.CurrentUser.ObjectId, roleEnum, customerId);
 			}
 
 			return null;
@@ -71,6 +76,23 @@ namespace IndustrialParamedics.iOS
 				}
 			}
 			callback(clients);
+		}
+
+		public async void query (Action<IList<string>> callback)
+		{
+			if (App.currentUser.customerId != null) {
+				var query = ParseObject.GetQuery ("Activity")
+				.WhereEqualTo ("clientId", App.currentUser.customerId);
+				IEnumerable<Object> results = await query.FindAsync ();
+				IList<string> jobs = new List<string> ();
+
+				foreach (ParseObject activity in results) {
+					if (activity.ContainsKey ("custJobId") && !jobs.Contains(activity ["custJobId"].ToString())) {
+						jobs.Add (activity ["custJobId"].ToString());
+					}
+				}
+				callback (jobs);
+			}
 		}
 
 		public async void saveForm (Form form)

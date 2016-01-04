@@ -12,7 +12,7 @@ namespace IndustrialParamedics
 			welcomeText.Text += ": " + App.currentUser.userName;
 		}
 
-		async void OnSuppliesRequestSubmit (object sender, EventArgs e)
+		async void OnSafetyTrackingSubmit (object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new FieldOrder());
 
@@ -25,7 +25,7 @@ namespace IndustrialParamedics
 		{
 
 		}
-		void OnSafetyTrackingSubmit (object sender, EventArgs e)
+		void OnSuppliesRequestSubmit (object sender, EventArgs e)
 		{
 
 		}

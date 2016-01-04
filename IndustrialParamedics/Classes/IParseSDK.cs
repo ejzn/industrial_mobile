@@ -12,7 +12,9 @@ namespace IndustrialParamedics
 		User getCurrentUser();
 		void sendEmail(string destEmail, int formId);
 
-		void query (string objectName, Action<IDictionary<string,string>> callback) ;
+		void query (string objectName, Action<IDictionary<string,string>> callback);
+
+		void query (Action<IList<string>> callback);
 
 		void saveForm (Form form);
 
