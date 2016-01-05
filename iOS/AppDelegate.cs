@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using UIKit;
+using Syncfusion.SfChart.XForms;
+using Syncfusion.SfChart.XForms.iOS;
 using Parse;
+
 
 namespace IndustrialParamedics.iOS
 {
@@ -13,6 +16,8 @@ namespace IndustrialParamedics.iOS
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
+
+			new SfChartRenderer();
 
 			ParseClient.Initialize ("Z6950gFV1RIPa66H4TKH23Fc5XDhPB2tGqC0Q27U", "x1BQxvzB8RubGSyqPnWoAX9PWkWLGzD9MJcJ3ACz");
 

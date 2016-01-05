@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-
 namespace IndustrialParamedics
 {
 	public partial class ReportsForm : ContentPage
 	{
+
+		public ICollection<ChartPoint> SiteData { get; set; }
 
 		public ReportsForm ()
 		{
@@ -21,18 +22,17 @@ namespace IndustrialParamedics
 
 				foreach (var client in results) 
 				{
-					siteId.Items.Add(client);
+					jobId.Items.Add(client);
 				}
-				if(siteId.Items.Count > 0) {
-					siteId.SelectedIndex = 0;
+				if(jobId.Items.Count > 0) {
+					jobId.SelectedIndex = 0;
 				}
 			});
 		}
 
-		void OnSubmit (object sender, EventArgs e)
+		async void OnSubmit (object sender, EventArgs e)
 		{
-			DisplayAlert ("test", App.currentUser.customerId, "ok");
-			// Pop the report that is generated
+			await Navigation.PushAsync(new SiteReport(10));
 		}
 
 

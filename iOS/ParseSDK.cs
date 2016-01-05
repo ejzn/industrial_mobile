@@ -4,6 +4,7 @@ using UIKit;
 using Xamarin.Forms;
 using IndustrialParamedics.iOS;
 using System.Collections.Generic;
+using System.IO;
 
 [assembly: Dependency(typeof(ParseSDK))]
 
@@ -59,9 +60,10 @@ namespace IndustrialParamedics.iOS
 			return null;
 		}
 
-		public async void sendEmail(string destEmail, int formId)
+		public async void sendEmail(string destEmail, string serverFileId)
 		{
-			await ParseCloud.CallFunctionAsync<string>("sendEmail",new Dictionary<string, object>());
+			var dict = new Dictionary<string, object> { { "email" , destEmail }, { "serverFileUrl", serverFileId } };
+			await ParseCloud.CallFunctionAsync<string>("sendEquipmentRequest", dict);
 		}
 
 		public async void query (string objectName, Action<IDictionary<string,string>> callback) 
@@ -95,6 +97,24 @@ namespace IndustrialParamedics.iOS
 			}
 		}
 
+		public async void querySiteData (string custJobId, Action<IList<ChartPoint>> callback)
+		{
+			/*if (App.currentUser.customerId != null) {
+				var query = ParseObject.GetQuery ("Activity")
+					.WhereEqualTo ("custJobId", custJobId);
+				IEnumerable<Object> results = await query.FindAsync ();
+				IList<ChartPoint> points = new List<ChartPoint> ();
+
+				foreach (ParseObject activity in results) {
+					if (activity.ContainsKey ("activityDate") && activity.ContainsKey("medicId") && activity.ContainsKey("") && activity.ContainsKey(""))
+					TODO: Figure out how to generate asum of rows by activity :)	
+						
+				}
+
+				callback (points);
+			}*/
+		}
+
 		public async void saveForm (Form form)
 		{
 			var activity = new ParseObject(Form.ParseRelation[form.formType]);
@@ -115,6 +135,13 @@ namespace IndustrialParamedics.iOS
 			
 			}
 			await activity.SaveAsync();
+		}
+
+		public async void saveFile (string fileName, Stream stream, Action<string> callback)
+		{
+			var file = new ParseFile (fileName, stream);
+			await file.SaveAsync ();
+			callback (file.Url.AbsoluteUri.ToString());
 		}
 	}
 }

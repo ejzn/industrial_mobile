@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.SiteReport"
+xmlns:c="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="70, 20, 20, 20"/>
+     </ContentPage.Padding>
+    <ContentPage.Content>
+    	<ScrollView Orientation="Vertical">
+	        <StackLayout VerticalOptions="FillAndExpand"
+	                     HorizontalOptions="FillAndExpand"
+	                     Orientation="Vertical"
+	                     Spacing="35">
+
+	             <Label  HorizontalOptions="Center"
+       				FontSize="Large" Text="Site Report" 
+       				TextColor="#007AFF"/>
+
+
+       			<c:SfChart x:Name="siteChart">
+
+       			<chart:SfChart.Title>
+			        <chart:ChartTitle/>
+			    </chart:SfChart.Title>
+       				<c:SfChart.PrimaryAxis>
+					  <c:CategoryAxis LabelRotationAngle = "-45">
+					    <c:CategoryAxis.Title>
+					      <c:ChartAxisTitle Text ="Activities"/>
+					    </c:CategoryAxis.Title>
+					  </c:CategoryAxis>
+					</c:SfChart.PrimaryAxis>
+
+					<c:SfChart.SecondaryAxis>
+					  <c:NumericalAxis>
+					    <c:NumericalAxis.Title>
+					      <c:ChartAxisTitle Text ="Count"/>
+					    </c:NumericalAxis.Title>
+					  </c:NumericalAxis>
+					</c:SfChart.SecondaryAxis>
+
+				</c:SfChart>
+       		
+	        </StackLayout>
+        </ScrollView>
+
+	</ContentPage.Content>
+</ContentPage>

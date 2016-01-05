@@ -3,6 +3,7 @@ using Parse;
 using Xamarin.Forms;
 using IndustrialParamedics.Droid;
 using System.Collections.Generic;
+using System.IO;
 
 [assembly: Dependency(typeof(ParseSDK))]
 
@@ -58,9 +59,10 @@ namespace IndustrialParamedics.Droid
 			return null;
 		}
 
-		public async void sendEmail(string destEmail, int formId)
+		public async void sendEmail(string destEmail, string serverFileId)
 		{
-			await ParseCloud.CallFunctionAsync<string>("sendEmail", new Dictionary<string, object>());
+			var dict = new Dictionary<string, object> { { "email" , destEmail }, { "serverFileUrl", serverFileId } };
+			await ParseCloud.CallFunctionAsync<string>("sendEquipmentRequest", dict);
 		}
 
 		public async void query (string objectName, Action<IDictionary<string,string>> callback) 
@@ -93,6 +95,16 @@ namespace IndustrialParamedics.Droid
 			}
 		}
 
+		public async void querySiteData (string custJobId, Action<IList<ChartPoint>> callback)
+		{
+			if (App.currentUser.customerId != null) {
+				var query = ParseObject.GetQuery ("Activity")
+					.WhereEqualTo ("custJobId", custJobId);
+				IEnumerable<Object> results = await query.FindAsync ();
+				callback (results);
+			}
+		}
+
 		public async void saveForm (Form form)
 		{
 			var activity = new ParseObject(Form.ParseRelation[form.formType]);
@@ -113,6 +125,15 @@ namespace IndustrialParamedics.Droid
 
 			}
 			await activity.SaveAsync();
+		}
+
+		public async void saveFile (string fileName, Stream stream, Action<string> callback)
+		{
+			if (stream.CanRead) {
+				var file = new ParseFile (fileName, stream);
+				await file.SaveAsync ();
+				callback (file.Url.AbsoluteUri.ToString ());
+			}
 		}
 	}
 }

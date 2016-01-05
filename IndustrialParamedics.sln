@@ -5,9 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialParamedics", "Ind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialParamedics.iOS", "iOS\IndustrialParamedics.iOS.csproj", "{F9116FFA-9D5B-44B0-8FD8-CC6AA65517A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialParamedics.Droid", "Droid\IndustrialParamedics.Droid.csproj", "{BED98749-FE37-48E4-AD2C-10437AB11080}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialParamedics.UITests", "UITests\IndustrialParamedics.UITests.csproj", "{0A1BC836-8F6B-4931-A96A-7DD30999A47E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialParamedics.Droid", "Droid\IndustrialParamedics.Droid.csproj", "{BED98749-FE37-48E4-AD2C-10437AB11080}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

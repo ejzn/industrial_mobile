@@ -18,8 +18,9 @@ namespace IndustrialParamedics
 
 		}
 
-		void OnEquipmentRequestSubmit (object sender, EventArgs e)
+		async void OnEquipmentRequestSubmit (object sender, EventArgs e)
 		{
+			await Navigation.PushAsync(new EquipmentRequest());
 		}
 		void OnBillingFormSubmit (object sender, EventArgs e)
 		{

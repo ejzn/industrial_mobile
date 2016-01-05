@@ -8,6 +8,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Parse;
+using Syncfusion.SfChart.XForms;
+using Syncfusion.SfChart.XForms.Droid;
 
 namespace IndustrialParamedics.Droid
 {
@@ -19,6 +21,8 @@ namespace IndustrialParamedics.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
+
+			new SfChartRenderer();
 
 			ParseClient.Initialize ("Z6950gFV1RIPa66H4TKH23Fc5XDhPB2tGqC0Q27U", "x1BQxvzB8RubGSyqPnWoAX9PWkWLGzD9MJcJ3ACz");
 			LoadApplication (new App ());
