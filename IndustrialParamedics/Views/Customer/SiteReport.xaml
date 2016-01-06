@@ -20,9 +20,13 @@ xmlns:c="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XFo
 
        			<c:SfChart x:Name="siteChart">
 
-       			<chart:SfChart.Title>
-			        <chart:ChartTitle/>
-			    </chart:SfChart.Title>
+       			<c:SfChart.Title>
+			        <c:ChartTitle/>
+			    </c:SfChart.Title>
+
+			    <c:SfChart.Legend>
+					<c:ChartLegend/>
+				</c:SfChart.Legend>
        				<c:SfChart.PrimaryAxis>
 					  <c:CategoryAxis LabelRotationAngle = "-45">
 					    <c:CategoryAxis.Title>

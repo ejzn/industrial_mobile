@@ -101,7 +101,20 @@ namespace IndustrialParamedics.Droid
 				var query = ParseObject.GetQuery ("Activity")
 					.WhereEqualTo ("custJobId", custJobId);
 				IEnumerable<Object> results = await query.FindAsync ();
-				callback (results);
+				IList<ChartPoint> points = new List<ChartPoint> ();
+
+				foreach (ParseObject activity in results) {
+					if (activity.ContainsKey ("activityDate") && activity.ContainsKey ("medicId")) {
+						var point = new ChartPoint ();
+						point.Activity = "Company Orientation";
+						point.Count = 5;
+						point.Date = activity.Get<string> ("activityDate");
+						point.Medic = activity.Get<string> ("medicId");
+					}
+
+				}
+
+				callback (points);
 			}
 		}
 

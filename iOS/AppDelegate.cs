@@ -4,6 +4,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using Syncfusion.SfChart.XForms;
+using Syncfusion.SfChart.XForms.iOS.Renderers;
 using Syncfusion.SfChart.XForms.iOS;
 using Parse;
 

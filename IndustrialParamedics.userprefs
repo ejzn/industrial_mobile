@@ -1,30 +1,26 @@
 ﻿<Properties StartupItem="iOS/IndustrialParamedics.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IndustrialParamedics/Views/Medic/EquipmentRequest.xaml.cs">
-    <Files>
-      <File FileName="IndustrialParamedics/Views/Medic/EquipmentRequest.xaml.cs" Line="97" Column="6" />
-      <File FileName="IndustrialParamedics/Views/Medic/EquipmentRequest.xaml" Line="46" Column="33" />
-      <File FileName="IndustrialParamedics/Views/HomePage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Droid/ParseSDK.cs" Line="106" Column="2" />
-      <File FileName="iOS/ParseSDK.cs" Line="121" Column="10" />
-      <File FileName="IndustrialParamedics/Classes/IParseSDK.cs" Line="22" Column="69" />
-      <File FileName="IndustrialParamedics/Views/Customer/ReportsForm.xaml.cs" Line="21" Column="52" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="IndustrialParamedics" expanded="True">
             <Node name="IndustrialParamedics" expanded="True">
+              <Node name="Classes" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Medic" expanded="True">
-                  <Node name="EquipmentRequest.xaml" expanded="True" />
+                <Node name="Customer" expanded="True">
+                  <Node name="CustomerHome.xaml" expanded="True">
+                    <Node name="CustomerHome.xaml.cs" selected="True" />
+                  </Node>
+                  <Node name="ReportsForm.xaml" expanded="True" />
+                  <Node name="SiteReport.xaml" expanded="True" />
                 </Node>
               </Node>
             </Node>
-            <Node name="IndustrialParamedics.Droid" expanded="True">
+            <Node name="IndustrialParamedics.Droid" expanded="True" />
+            <Node name="IndustrialParamedics.iOS" expanded="True">
               <Node name="ComponentReferenceFolder" expanded="True" />
             </Node>
-            <Node name="IndustrialParamedics.iOS" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>

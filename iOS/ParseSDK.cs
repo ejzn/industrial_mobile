@@ -99,20 +99,26 @@ namespace IndustrialParamedics.iOS
 
 		public async void querySiteData (string custJobId, Action<IList<ChartPoint>> callback)
 		{
-			/*if (App.currentUser.customerId != null) {
+			if (App.currentUser.customerId != null) {
 				var query = ParseObject.GetQuery ("Activity")
 					.WhereEqualTo ("custJobId", custJobId);
 				IEnumerable<Object> results = await query.FindAsync ();
 				IList<ChartPoint> points = new List<ChartPoint> ();
 
 				foreach (ParseObject activity in results) {
-					if (activity.ContainsKey ("activityDate") && activity.ContainsKey("medicId") && activity.ContainsKey("") && activity.ContainsKey(""))
-					TODO: Figure out how to generate asum of rows by activity :)	
+					if (activity.ContainsKey ("activityDate") && activity.ContainsKey ("medicId")) {
+						var point = new ChartPoint ();
+						point.Activity = "Company Orientation";
+						point.Count = 5;
+						point.Date = activity.Get<DateTime> ("activityDate");
+						point.Medic = activity.Get<string> ("medicId");
+						points.Add (point);
+					}
 						
 				}
 
 				callback (points);
-			}*/
+			}
 		}
 
 		public async void saveForm (Form form)

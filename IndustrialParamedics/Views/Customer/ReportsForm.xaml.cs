@@ -32,7 +32,7 @@ namespace IndustrialParamedics
 
 		async void OnSubmit (object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new SiteReport(10));
+			await Navigation.PushAsync(new SiteReport(jobId.Items[jobId.SelectedIndex]));
 		}
 
 
