@@ -28,8 +28,9 @@ namespace IndustrialParamedics
 			if (QTY.SelectedIndex > 0 && QTY.Items [QTY.SelectedIndex] != null) {
 				line.qty = QTY.Items [QTY.SelectedIndex].ToString ();
 			}
+
 			if (Reason.Text != null) {
-				line.pcr = PCR.Text;
+				line.reasonCode = Reason.Text;
 			}
 			if (line != null) {
 				MessagingCenter.Send<AddOrderItem, OrderLine> (this, "addItem", line);

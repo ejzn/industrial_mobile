@@ -40,8 +40,6 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <IpaPackageName>
     </IpaPackageName>
-    <MtouchI18n>
-    </MtouchI18n>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
