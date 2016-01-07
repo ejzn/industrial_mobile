@@ -66,6 +66,12 @@ namespace IndustrialParamedics.iOS
 			await ParseCloud.CallFunctionAsync<string>("sendEquipmentRequest", dict);
 		}
 
+		public async void sendFieldOrder(string destEmail, string serverFileId)
+		{
+			var dict = new Dictionary<string, object> { { "email" , destEmail }, { "serverFileUrl", serverFileId } };
+			await ParseCloud.CallFunctionAsync<string>("sendFieldOrder", dict);
+		}
+
 		public async void query (string objectName, Action<IDictionary<string,string>> callback) 
 		{
 			var query = ParseObject.GetQuery (objectName);

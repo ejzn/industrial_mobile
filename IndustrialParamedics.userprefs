@@ -1,30 +1,18 @@
 ﻿<Properties StartupItem="iOS/IndustrialParamedics.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.1" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="IndustrialParamedics" expanded="True">
-            <Node name="IndustrialParamedics" expanded="True">
-              <Node name="Classes" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Customer" expanded="True">
-                  <Node name="CustomerHome.xaml" expanded="True">
-                    <Node name="CustomerHome.xaml.cs" selected="True" />
-                  </Node>
-                  <Node name="ReportsForm.xaml" expanded="True" />
-                  <Node name="SiteReport.xaml" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="IndustrialParamedics.Droid" expanded="True" />
-            <Node name="IndustrialParamedics.iOS" expanded="True">
-              <Node name="ComponentReferenceFolder" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="IndustrialParamedics/Views/Medic/MedicHome.xaml.cs">
+    <Files>
+      <File FileName="IndustrialParamedics/Views/Medic/FieldOrder.xaml.cs" Line="58" Column="20" />
+      <File FileName="iOS/ParseSDK.cs" Line="52" Column="23" />
+      <File FileName="IndustrialParamedics/Views/Medic/AddOrderItem.xaml.cs" Line="27" Column="5" />
+      <File FileName="IndustrialParamedics/Views/Medic/FieldOrder.xaml" Line="54" Column="13" />
+      <File FileName="IndustrialParamedics/Views/Medic/ActivitySubmission.xaml.cs" Line="1" Column="1" />
+      <File FileName="IndustrialParamedics/Views/Medic/SafetyRequest.xaml" Line="20" Column="7" />
+      <File FileName="IndustrialParamedics/Views/Medic/SafetyRequest.xaml.cs" Line="49" Column="46" />
+      <File FileName="IndustrialParamedics/Views/Medic/MedicHome.xaml" Line="24" Column="191" />
+      <File FileName="IndustrialParamedics/Views/Customer/CustomerHome.xaml" Line="1" Column="1" />
+      <File FileName="IndustrialParamedics/Views/Medic/MedicHome.xaml.cs" Line="7" Column="16" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

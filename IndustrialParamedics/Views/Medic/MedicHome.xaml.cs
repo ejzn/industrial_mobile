@@ -14,21 +14,20 @@ namespace IndustrialParamedics
 
 		async void OnSafetyTrackingSubmit (object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new FieldOrder());
-
+			await Navigation.PushAsync(new ActivitySubmission());
 		}
 
 		async void OnEquipmentRequestSubmit (object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new EquipmentRequest());
+			await Navigation.PushAsync(new SafetyRequest());
 		}
 		void OnBillingFormSubmit (object sender, EventArgs e)
 		{
-
+			//TODO: Insert billing submission here
 		}
-		void OnSuppliesRequestSubmit (object sender, EventArgs e)
+		async void OnSuppliesRequestSubmit (object sender, EventArgs e)
 		{
-
+			await Navigation.PushAsync(new FieldOrder());
 		}
 		async void OnlogoutButton (object sender, EventArgs e)
 		{

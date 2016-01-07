@@ -65,6 +65,12 @@ namespace IndustrialParamedics.Droid
 			await ParseCloud.CallFunctionAsync<string>("sendEquipmentRequest", dict);
 		}
 
+		public async void sendFieldOrder(string destEmail, string serverFileId)
+		{
+			var dict = new Dictionary<string, object> { { "email" , destEmail }, { "serverFileUrl", serverFileId } };
+			await ParseCloud.CallFunctionAsync<string>("sendFieldOrder", dict);
+		}
+
 		public async void query (string objectName, Action<IDictionary<string,string>> callback) 
 		{
 			var query = ParseObject.GetQuery (objectName);
@@ -108,7 +114,7 @@ namespace IndustrialParamedics.Droid
 						var point = new ChartPoint ();
 						point.Activity = "Company Orientation";
 						point.Count = 5;
-						point.Date = activity.Get<string> ("activityDate");
+						point.Date = activity.Get<DateTime> ("activityDate");
 						point.Medic = activity.Get<string> ("medicId");
 					}
 

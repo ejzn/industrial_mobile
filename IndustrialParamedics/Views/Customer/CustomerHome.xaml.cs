@@ -14,7 +14,7 @@ namespace IndustrialParamedics
 
 		async void OnSuppliesRequestSubmit (object sender, EventArgs e)
 		{
-
+			await Navigation.PushAsync(new SafetyRequest());
 		}
 		async void OnsiteReports (object sender, EventArgs e)
 		{

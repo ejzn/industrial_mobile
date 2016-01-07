@@ -12,6 +12,7 @@ namespace IndustrialParamedics
 		void LogOutAsync ();
 		User getCurrentUser();
 		void sendEmail(string destEmail, string serverFileId);
+		void sendFieldOrder(string destEmail, string serverFileId);
 
 		void query (string objectName, Action<IDictionary<string,string>> callback);
 

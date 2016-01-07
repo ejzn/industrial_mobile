@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.AddOrderItem" Padding="20, 10, 20, 5">
+		<ScrollView Orientation="Vertical">
+		<Grid>
+		    <Grid.RowDefinitions>
+		      <RowDefinition Height="40" />
+
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		      <RowDefinition Height="Auto" />
+		     
+		    </Grid.RowDefinitions>
+
+		    <Grid.ColumnDefinitions>
+		      <ColumnDefinition Width="Auto" />
+		    </Grid.ColumnDefinitions>
+
+		    <!--- Header -->
+		    <Label  HorizontalOptions="Center"
+       				FontSize="Large" Text="Add Item" 
+       				TextColor="#007AFF"
+       				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+		    <!--Site Information -->
+		    <Label Text="Item:" Grid.Row="1" Grid.Column="0"/>
+           	<Entry x:Name="Item" Grid.Row="1" Grid.Column="1"/>
+
+    		<Label Text="Order:" Grid.Row="2" Grid.Column="0"/>
+           	<Entry x:Name="Order" Grid.Row="2" Grid.Column="1"/>
+
+           	<Label Text="PCR:" Grid.Row="3" Grid.Column="0"/>
+           	<Entry x:Name="PCR" Grid.Row="3" Grid.Column="1"/>
+
+           	<Label Text="Reason:" Grid.Row="4" Grid.Column="0"/>
+           	<Entry x:Name="Reason" Grid.Row="4" Grid.Column="1"/>
+
+           	<Label Text="Qty:" Grid.Row="5" Grid.Column="0"/>
+           	<Picker x:Name="QTY" 
+           		SelectedIndex="0" 
+           		HorizontalOptions="FillAndExpand" 
+           		Grid.Row="5" Grid.Column="1">
+		        <Picker.Items>
+		            <x:String>1</x:String> 
+		            <x:String>2</x:String>
+		            <x:String>3</x:String>
+		            <x:String>4</x:String>
+		            <x:String>5</x:String>
+		            <x:String>6</x:String>
+		            <x:String>7</x:String>
+		            <x:String>8</x:String>
+		            <x:String>9</x:String>
+		            <x:String>10</x:String>
+		        </Picker.Items>
+    		</Picker>
+
+           	<Button x:Name="submitButton" Text="Add" 
+           		Clicked="OnSubmit" 
+           		Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+           		BorderColor="#FF9500" 
+           		BackgroundColor="#FF5E3A"
+           		TextColor="White"
+           		BorderWidth="1" />
+
+  		</Grid>
+  	</ScrollView>
+</ContentPage>

@@ -10,7 +10,7 @@ using Xamarin.Forms;
 namespace IndustrialParamedics
 {
 
-	public class EquipmentForm {
+	public class SafetyForm {
 
 		public string Job { get; set; }
 		public string Customer { get; set; }
@@ -22,11 +22,11 @@ namespace IndustrialParamedics
 
 	}
 
-	public partial class EquipmentRequest : ContentPage
+	public partial class SafetyRequest : ContentPage
 	{
-		public EquipmentForm equipmentForm;
+		public SafetyForm safetyForm;
 
-		public EquipmentRequest ()
+		public SafetyRequest ()
 		{
 			InitializeComponent ();
 
@@ -43,13 +43,13 @@ namespace IndustrialParamedics
 
 		private void initializeValues ()
 		{
-			this.equipmentForm = new EquipmentForm();
-			equipmentForm.Job = Job.Text;
-			equipmentForm.Customer = customerId.Items[customerId.SelectedIndex].ToString();
-			equipmentForm.Date = DateTime.Now.ToString();
-			equipmentForm.Name = App.currentUser.userName;
-			equipmentForm.Title = title.Text;
-			equipmentForm.Note = note.Text;
+			this.safetyForm = new SafetyForm();
+			safetyForm.Job = Job.Text;
+			safetyForm.Customer = customerId.Items[customerId.SelectedIndex].ToString();
+			safetyForm.Date = DateTime.Now.ToString();
+			safetyForm.Name = App.currentUser.userName;
+			safetyForm.Title = title.Text;
+			safetyForm.Note = note.Text;
 		}
 
 		async void OnSubmit (object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace IndustrialParamedics
 
 			//Create Template Marker Processor
 			ITemplateMarkersProcessor marker = book.CreateTemplateMarkersProcessor();
-			marker.AddVariable("EquipmentForm", this.equipmentForm);
+			marker.AddVariable("EquipmentForm", this.safetyForm);
 
 			//Applies the marker.
 			marker.ApplyMarkers(UnknownVariableAction.Skip);

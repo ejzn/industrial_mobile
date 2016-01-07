@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.EquipmentRequest" Padding="20, 10, 20, 5">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.SafetyRequest" Padding="20, 10, 20, 5">
 	<ScrollView Orientation="Vertical">
 		<Grid>
 		    <Grid.RowDefinitions>
@@ -24,7 +24,7 @@
 
 		    <!--- Header -->
 		    <Label  HorizontalOptions="Center"
-       				FontSize="Large" Text="Equipment Request" 
+       				FontSize="Large" Text="Safety Request" 
        				TextColor="#007AFF"
        				Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 

@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace IndustrialParamedics
 {
-	public partial class FieldOrder : ContentPage
+	public partial class ActivitySubmission : ContentPage
 	{
 		private IDictionary<string,string> clients;
 
@@ -16,7 +16,7 @@ namespace IndustrialParamedics
 			{"HAZARD_ORIENTATIONS" , "numHazardOrientations"}, {"ISP_JPA" , "numIPSPJAs"}, {"THIRD_PARTY", "numThirdPartys"},
 			{"SAFETY_MEETINGS" , "numSafetyMeetings"}, {"WORK_PERMITS" , "numSafeWorkPermits"}};
 
-		public FieldOrder ()
+		public ActivitySubmission ()
 		{
 			InitializeComponent ();
 			InitializeFieldValues ();

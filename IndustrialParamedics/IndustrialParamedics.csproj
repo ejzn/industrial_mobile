@@ -30,9 +30,6 @@
     <Compile Include="Views\Medic\MedicHome.xaml.cs">
       <DependentUpon>MedicHome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Medic\FieldOrder.xaml.cs">
-      <DependentUpon>FieldOrder.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Classes\IParseSDK.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Form.cs" />
@@ -48,17 +45,23 @@
     <Compile Include="Views\Customer\SiteReport.xaml.cs">
       <DependentUpon>SiteReport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Medic\EquipmentRequest.xaml.cs">
-      <DependentUpon>EquipmentRequest.xaml</DependentUpon>
+    <Compile Include="Views\Medic\FieldOrder.xaml.cs">
+      <DependentUpon>FieldOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Medic\SafetyRequest.xaml.cs">
+      <DependentUpon>SafetyRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Medic\ActivitySubmission.xaml.cs">
+      <DependentUpon>ActivitySubmission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Medic\AddOrderItem.xaml.cs">
+      <DependentUpon>AddOrderItem.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
     <EmbeddedResource Include="Views\HomePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Medic\FieldOrder.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Medic\MedicHome.xaml">
@@ -76,10 +79,20 @@
     <EmbeddedResource Include="Views\Customer\SiteReport.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Medic\EquipmentRequest.xaml">
+    <EmbeddedResource Include="Equipment_Template.xlsx" />
+    <EmbeddedResource Include="Field_Order_Template.xlsx" />
+    <EmbeddedResource Include="Views\Medic\FieldOrder.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Equipment_Template.xlsx" />
+    <EmbeddedResource Include="Views\Medic\SafetyRequest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Medic\ActivitySubmission.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Medic\AddOrderItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
