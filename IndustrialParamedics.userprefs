@@ -1,11 +1,6 @@
 ﻿<Properties StartupItem="iOS/IndustrialParamedics.iOS.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IndustrialParamedics/Views/Medic/MedicHome.xaml">
-    <Files>
-      <File FileName="IndustrialParamedics/Views/Medic/MedicHome.xaml" Line="8" Column="12" />
-      <File FileName="IndustrialParamedics/Views/HomePage.xaml" Line="18" Column="14" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.9.2" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

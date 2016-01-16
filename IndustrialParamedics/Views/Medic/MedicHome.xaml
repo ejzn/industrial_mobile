@@ -26,7 +26,6 @@
 		        <Button x:Name="logoutButton" Text="Logout" Clicked="OnlogoutButton" TextColor="White" BorderColor="#0076FF" BorderWidth="1" BackgroundColor="#0076FF"/>
 	         </StackLayout>
         </ScrollView>
-        <Image Source="IPSLogo.png" Scale="0.4" Opacity="0.5"/>
 
 	</ContentPage.Content>
 </ContentPage>
