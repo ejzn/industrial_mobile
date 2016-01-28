@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.AddOrderItem" Padding="20, 10, 20, 5">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IndustrialParamedics.AddOrderItem" Padding="30, 20, 20, 10">
 		<ScrollView Orientation="Vertical">
 		<Grid>
 		    <Grid.RowDefinitions>
 		      <RowDefinition Height="40" />
 
+		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
 		      <RowDefinition Height="Auto" />
@@ -60,6 +61,14 @@
            	<Button x:Name="submitButton" Text="Add" 
            		Clicked="OnSubmit" 
            		Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+           		BorderColor="#FF9500" 
+           		BackgroundColor="#FF5E3A"
+           		TextColor="White"
+           		BorderWidth="1" />
+
+           		<Button x:Name="cancelButton" Text="Cancel" 
+           		Clicked="OnCancel" 
+           		Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
            		BorderColor="#FF9500" 
            		BackgroundColor="#FF5E3A"
            		TextColor="White"

@@ -19,10 +19,10 @@
        			<Label x:Name="welcomeText" HorizontalOptions="Center"
        				Text="Welcome"/>
 
-	            <Button x:Name="safetyEnhancementButton" Text="Safety Tracking" Clicked="OnSafetyTrackingSubmit" FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/> 
-	            <Button x:Name="equipmentRequest" Text="Safety Request" Clicked="OnEquipmentRequestSubmit" FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
-		        <Button x:Name="suppliesRequestButton" Text="Supplies Request" Clicked="OnSuppliesRequestSubmit"  FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
-		        <Button x:Name="billingFormButton" Text="Billing Form" Clicked="OnBillingFormSubmit" FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White" />
+	            <Button x:Name="safetyEnhancementButton" Text="Activity Tracking" Clicked="OnActivitySubmit" FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/> 
+	            <Button x:Name="vehicleRequest" Text="Vehicle Request" Clicked="OnVehicleRequestSubmit" FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
+		        <Button x:Name="inventoryRequestButton" Text="Supplies Request" Clicked="OnInventoryOrderSubmit"  FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White"/>
+		        <Button x:Name="timeEntryFormButton" Text="Time Entry" Clicked="OnTimeEntrySubmit" FontAttributes="Bold" BackgroundColor="#FF5E3A"  BorderColor="White" BorderWidth="1" TextColor="White" />
 		        <Button x:Name="logoutButton" Text="Logout" Clicked="OnlogoutButton" TextColor="White" BorderColor="#0076FF" BorderWidth="1" BackgroundColor="#0076FF"/>
 	         </StackLayout>
         </ScrollView>

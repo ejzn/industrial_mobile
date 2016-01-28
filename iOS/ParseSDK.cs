@@ -40,8 +40,14 @@ namespace IndustrialParamedics.iOS
 		public User getCurrentUser()
 		{
 			if (ParseUser.CurrentUser != null) {
-				string role = ParseUser.CurrentUser.Get<string>("userRole");
+				string role = null;
 				User.Role roleEnum;
+				if (ParseUser.CurrentUser.ContainsKey ("userRole")) {
+					role = ParseUser.CurrentUser.Get<string> ("userRole");
+
+				} else {
+					return null;
+				}
 
 				if (role != null && role.Length > 0) {
 					roleEnum = (User.Role)Enum.Parse (typeof(User.Role), role);
@@ -49,15 +55,76 @@ namespace IndustrialParamedics.iOS
 					roleEnum = User.Role.customer;
 				}
 
+				bool enabled = false;
+				if (ParseUser.CurrentUser.ContainsKey ("enabled")) {
+					enabled = ParseUser.CurrentUser.Get<bool> ("enabled");
+				}
+
 				string customerId = null;
 				if(ParseUser.CurrentUser.ContainsKey("customerId")) {
 					customerId = ParseUser.CurrentUser.Get<string>("customerId");
 				}
 
-				return new User (ParseUser.CurrentUser.Username, ParseUser.CurrentUser.ObjectId, roleEnum, customerId);
+				return new User (ParseUser.CurrentUser.Username, ParseUser.CurrentUser.ObjectId, roleEnum, customerId, enabled);
 			}
 
 			return null;
+		}
+
+		public async void signUp (string username, string password, string email, string role, Action<bool> callback)
+		{
+
+			// Check if this user exists already?
+			var query = ParseUser.Query.WhereEqualTo ("username", username);
+			var count = await query.CountAsync ();
+
+			if (count > 0) {
+				callback (false);
+				return;
+			}
+				
+			query = ParseUser.Query.WhereEqualTo ("email", email);
+			count = await query.CountAsync ();
+
+			if (count > 0) {
+				callback (false);
+				return;
+			}
+
+			var user = new ParseUser () {
+				Username = username,
+				Password = password,
+				Email = email
+			};
+					
+			user["userRole"] = "medic";
+			user["enabled"] = false;
+
+			await user.SignUpAsync ();
+
+			String val = "";
+			Parse.ParseConfig.CurrentConfig.TryGetValue<String> ("signupEmail", out val);
+
+			sendSignupNotification (val, email); 
+			callback (true);
+		}
+
+		public async void passwordReset (string email)
+		{
+			ParseUser.RequestPasswordResetAsync (email);
+		}
+
+		/* Emails 
+		 * This section provides native capabilities for emails on Parse
+		 *
+		*/
+
+		public async void sendSignupNotification(string destEmail, string username)
+		{
+			if (destEmail == null)
+				destEmail = "";
+			var dict = new Dictionary<string, object> { { "email" , destEmail }, {"username" ,  username}};
+			await ParseCloud.CallFunctionAsync<string>("sendSignupNotification", dict);
 		}
 
 		public async void sendEmail(string destEmail, string serverFileId)
@@ -154,6 +221,20 @@ namespace IndustrialParamedics.iOS
 			var file = new ParseFile (fileName, stream);
 			await file.SaveAsync ();
 			callback (file.Url.AbsoluteUri.ToString());
+		}
+
+		public String getFieldOrderEmail ()
+		{
+			String val = "";
+			Parse.ParseConfig.CurrentConfig.TryGetValue<String> ("fieldOrderEmail", out val);
+			return val;
+		}
+
+		public String getVehicleRequestEmail ()
+		{
+			String val = "";
+			Parse.ParseConfig.CurrentConfig.TryGetValue<String> ("vehicleRequestEmail", out val);
+			return val;
 		}
 	}
 }

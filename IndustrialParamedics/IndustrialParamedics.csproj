@@ -24,9 +24,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\IndustrialParamedics.cs" />
-    <Compile Include="Views\HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Medic\MedicHome.xaml.cs">
       <DependentUpon>MedicHome.xaml</DependentUpon>
     </Compile>
@@ -45,25 +42,29 @@
     <Compile Include="Views\Customer\SiteReport.xaml.cs">
       <DependentUpon>SiteReport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Medic\FieldOrder.xaml.cs">
-      <DependentUpon>FieldOrder.xaml</DependentUpon>
+    <Compile Include="Views\General\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Medic\SafetyRequest.xaml.cs">
-      <DependentUpon>SafetyRequest.xaml</DependentUpon>
+    <Compile Include="Views\General\SignUp.xaml.cs" />
+    <Compile Include="Views\Medic\Forms\InventoryOrder\AddOrderItem.xaml.cs">
+      <DependentUpon>..\..\InventoryOrder\AddOrderItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Medic\ActivitySubmission.xaml.cs">
+    <Compile Include="Views\Medic\Forms\InventoryOrder\InventoryOrder.xaml.cs">
+      <DependentUpon>InventoryOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Medic\Forms\ActivitySubmission.xaml.cs">
       <DependentUpon>ActivitySubmission.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Medic\AddOrderItem.xaml.cs">
-      <DependentUpon>AddOrderItem.xaml</DependentUpon>
+    <Compile Include="Views\Medic\Forms\VehicleRequest.xaml.cs">
+      <DependentUpon>VehicleRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\General\PasswordReset.xaml.cs">
+      <DependentUpon>PasswordReset.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
-    <EmbeddedResource Include="Views\HomePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Medic\MedicHome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -81,16 +82,23 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Equipment_Template.xlsx" />
     <EmbeddedResource Include="Field_Order_Template.xlsx" />
-    <EmbeddedResource Include="Views\Medic\FieldOrder.xaml">
+    <EmbeddedResource Include="Views\General\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Medic\SafetyRequest.xaml">
+    <EmbeddedResource Include="Views\General\SignUp.xaml" />
+    <EmbeddedResource Include="Views\Medic\Forms\InventoryOrder\AddOrderItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Medic\ActivitySubmission.xaml">
+    <EmbeddedResource Include="Views\Medic\Forms\InventoryOrder\InventoryOrder.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Medic\AddOrderItem.xaml">
+    <EmbeddedResource Include="Views\Medic\Forms\ActivitySubmission.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Medic\Forms\VehicleRequest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\General\PasswordReset.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -100,6 +108,9 @@
     <Folder Include="Views\Medic\" />
     <Folder Include="Views\Customer\" />
     <Folder Include="Views\Admin\" />
+    <Folder Include="Views\General\" />
+    <Folder Include="Views\Medic\Forms\" />
+    <Folder Include="Views\Medic\Forms\InventoryOrder\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

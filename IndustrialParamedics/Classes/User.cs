@@ -10,12 +10,14 @@ namespace IndustrialParamedics
 		public enum Role { admin, medic, customer};
 		public Role role { get; set; }
 		public string customerId {get; set;}
+		public bool enabled {get; set;}
 
-		public User (string userName, string userId, Role role, String customerId) {
+		public User (string userName, string userId, Role role, String customerId, bool enabled) {
 			this.userName = userName;
 			this.userId = userId;
 			this.role = role;
 			this.customerId = customerId;
+			this.enabled = enabled;
 		}
 
 	}

@@ -21,6 +21,8 @@
 	            <Label Text="Password" FontAttributes="Bold"/>
 	            <Entry IsPassword="true" x:Name="passwordText" Text="" />
 	            <Button x:Name="loginButton" Text="Login" Clicked="OnLogin" TextColor="White" BorderColor="#0076FF" BorderWidth="1" BackgroundColor="#0076FF"/>
+	            <Button x:Name="signUpButton" Text="Sign Up" Clicked="OnSignUp" TextColor="White" BorderColor="#0076FF" BorderWidth="1" BackgroundColor="#0076FF"/>
+	            <Button x:Name="passwordResetButton" Text="Password Reset" Clicked="OnPasswordReset" TextColor="White" BorderColor="#0076FF" BorderWidth="1" BackgroundColor="#0076FF"/>
 	        </StackLayout>
        </ScrollView>
     </ContentPage.Content>

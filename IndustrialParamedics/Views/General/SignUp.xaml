@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndustrialParamedics.SignUp">
+
+     <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 80, 20, 20"
+                    Android="70, 20, 20, 20"/>
+     </ContentPage.Padding>
+    <ContentPage.Content>
+    <ScrollView Orientation="Vertical">
+
+	        <StackLayout VerticalOptions="FillAndExpand"
+	                     HorizontalOptions="FillAndExpand"
+	                     Orientation="Vertical"
+	                     Spacing="15">
+	            
+	            <Label Text="Username" FontAttributes="Bold"/>
+	            <Entry x:Name="username" Text="" />
+
+	            <Label Text="Email" FontAttributes="Bold"/>
+	            <Entry x:Name="email" Text="" />
+
+	            <Label Text="Confirm Email" FontAttributes="Bold"/>
+	            <Entry x:Name="confirmEmail" Text="" />
+
+	            <Label Text="Password" FontAttributes="Bold"/>
+	            <Entry IsPassword="true" x:Name="password" Text="" />
+
+	            <Label Text="Confirm Password" FontAttributes="Bold"/>
+	            <Entry IsPassword="true" x:Name="passwordConfirm" Text="" />
+
+	            <Button x:Name="signUpButton" Text="Sign Up" Clicked="OnSignUp" TextColor="White" BorderColor="#0076FF" BorderWidth="1" BackgroundColor="#0076FF"/>
+	        </StackLayout>
+       </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -21,6 +21,11 @@ namespace IndustrialParamedics
 
 		private void redirectToLogin () 
 		{
+			if (App.currentUser == null || !App.currentUser.enabled) {
+				DisplayAlert ("Login Denied", "Your user exists, but is not enabled yet. Please contact admin@ipsems.com.","OK");
+				return;
+			}
+
 			if (App.currentUser.role == User.Role.medic) {
 				Navigation.PushModalAsync (new NavigationPage (new MedicHome ()));
 			}
@@ -51,5 +56,17 @@ namespace IndustrialParamedics
 				DisplayAlert ("Connectivity Error", "The system could not initialize, please try again", "OK");	
 			}
 		}
+
+		void OnSignUp (object sender, EventArgs e)
+		{
+			Navigation.PushModalAsync (new NavigationPage (new SignUp ()));
+		}
+
+		void OnPasswordReset (object sender, EventArgs e)
+		{
+			Navigation.PushModalAsync (new NavigationPage (new PasswordReset ()));
+		}
+
+
 	}
 }

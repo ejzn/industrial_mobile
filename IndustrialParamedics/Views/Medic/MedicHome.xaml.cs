@@ -12,22 +12,22 @@ namespace IndustrialParamedics
 			welcomeText.Text += ": " + App.currentUser.userName;
 		}
 
-		async void OnSafetyTrackingSubmit (object sender, EventArgs e)
+		async void OnActivitySubmit (object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new ActivitySubmission());
 		}
 
-		async void OnEquipmentRequestSubmit (object sender, EventArgs e)
+		async void OnVehicleRequestSubmit (object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new SafetyRequest());
+			await Navigation.PushAsync(new VehicleRequest());
 		}
-		void OnBillingFormSubmit (object sender, EventArgs e)
+		void OnTimeEntrySubmit (object sender, EventArgs e)
 		{
-			//TODO: Insert billing submission here
+			DisplayAlert ("Time Entry", "Coming Soon in V2 Time Entry","OK");
 		}
-		async void OnSuppliesRequestSubmit (object sender, EventArgs e)
+		async void OnInventoryOrderSubmit (object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new FieldOrder());
+			await Navigation.PushAsync(new InventoryOrder());
 		}
 		async void OnlogoutButton (object sender, EventArgs e)
 		{

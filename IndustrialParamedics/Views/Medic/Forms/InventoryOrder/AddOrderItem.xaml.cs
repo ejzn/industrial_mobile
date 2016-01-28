@@ -38,6 +38,11 @@ namespace IndustrialParamedics
 			await this.Navigation.PopModalAsync();
 		}
 
+		async void OnCancel (object sender, EventArgs e)
+		{
+			await this.Navigation.PopModalAsync ();
+		}
+
 	}
 }
 

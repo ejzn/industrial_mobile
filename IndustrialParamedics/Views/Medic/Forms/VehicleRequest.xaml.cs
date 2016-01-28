@@ -10,23 +10,28 @@ using Xamarin.Forms;
 namespace IndustrialParamedics
 {
 
-	public class SafetyForm {
+	public class VehicleForm {
 
 		public string Job { get; set; }
 		public string Customer { get; set; }
 		public string Name { get; set; }
 		public string Date { get; set; }
 		public string Phone { get; set; }
-		public string Title { get; set; }
 		public string Note { get; set; }
+		public string VehicleType { get; set; }
+		public string FuelType { get; set; }
+		public string MTC { get; set; }
+		public string Unit { get; set; }
+		public string IncidentNum { get; set; }
+
 
 	}
 
-	public partial class SafetyRequest : ContentPage
+	public partial class VehicleRequest : ContentPage
 	{
-		public SafetyForm safetyForm;
+		public VehicleForm vehicleForm;
 
-		public SafetyRequest ()
+		public VehicleRequest ()
 		{
 			InitializeComponent ();
 
@@ -39,17 +44,26 @@ namespace IndustrialParamedics
 					customerId.SelectedIndex = 0;
 				}
 			});
+
+			fuelType.SelectedIndex = 0;
+			vehicleType.SelectedIndex = 0;
 		}
 
 		private void initializeValues ()
 		{
-			this.safetyForm = new SafetyForm();
-			safetyForm.Job = Job.Text;
-			safetyForm.Customer = customerId.Items[customerId.SelectedIndex].ToString();
-			safetyForm.Date = DateTime.Now.ToString();
-			safetyForm.Name = App.currentUser.userName;
-			safetyForm.Title = title.Text;
-			safetyForm.Note = note.Text;
+			this.vehicleForm = new VehicleForm();
+			vehicleForm.Job = Job.Text;
+			vehicleForm.Customer = customerId.Items[customerId.SelectedIndex].ToString();
+			vehicleForm.Date = DateTime.Now.ToString();
+			vehicleForm.Name = App.currentUser.userName;
+			vehicleForm.Note = note.Text;
+
+			vehicleForm.FuelType = fuelType.Items[fuelType.SelectedIndex].ToString();
+			vehicleForm.VehicleType = vehicleType.Items[vehicleType.SelectedIndex].ToString();
+			vehicleForm.Unit = unit.Text;
+			vehicleForm.MTC = MTC.Text;
+			vehicleForm.IncidentNum = incident.Text;
+
 		}
 
 		async void OnSubmit (object sender, EventArgs e)
@@ -63,7 +77,7 @@ namespace IndustrialParamedics
 
 		private void sendEmail (string excelFileURL)
 		{
-			App.Parse.sendEmail("erikj54+operations@gmail.com", excelFileURL);
+			App.Parse.sendEmail(App.Parse.getVehicleRequestEmail(), excelFileURL);
 		}
 
 		public void generateExcelFromTemplate ()
@@ -84,7 +98,7 @@ namespace IndustrialParamedics
 
 			//Create Template Marker Processor
 			ITemplateMarkersProcessor marker = book.CreateTemplateMarkersProcessor();
-			marker.AddVariable("EquipmentForm", this.safetyForm);
+			marker.AddVariable("VehicleForm", this.vehicleForm);
 
 			//Applies the marker.
 			marker.ApplyMarkers(UnknownVariableAction.Skip);
@@ -94,7 +108,7 @@ namespace IndustrialParamedics
 			book.Close ();
 			data.Seek(0, SeekOrigin.Begin);
 
-			App.Parse.saveFile ("EquipmentRequest.xlsx", data, this.sendEmail);
+			App.Parse.saveFile ("VehicleRequest.xlsx", data, this.sendEmail);
 
 		}
 	}

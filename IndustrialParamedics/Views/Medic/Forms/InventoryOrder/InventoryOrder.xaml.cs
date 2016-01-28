@@ -30,12 +30,12 @@ namespace IndustrialParamedics
 
 	}
 
-	public partial class FieldOrder : ContentPage
+	public partial class InventoryOrder : ContentPage
 	{
 		public OrderForm orderForm;
 		public ObservableCollection<OrderLine> orderlines { get; set; }
 
-		public FieldOrder ()
+		public InventoryOrder ()
 		{
 			InitializeComponent ();
 
@@ -50,14 +50,6 @@ namespace IndustrialParamedics
 			});
 
 			orderlines = new ObservableCollection<OrderLine> ();
-
-			/*var line1 = new OrderLine ();
-			line1.item = "Gloves";
-			line1.order = "1234";
-			line1.pcr = "XCD";
-			line1.qty = "5";
-			line1.reasonCode = "99";
-			orderlines.Add (line1);*/
 
 			listView.ItemsSource = orderlines;
 			listView.RowHeight = 80;
@@ -98,7 +90,7 @@ namespace IndustrialParamedics
 
 		private void sendEmail (string excelFileURL)
 		{
-			App.Parse.sendFieldOrder("erikj54+orders@gmail.com", excelFileURL);
+			App.Parse.sendFieldOrder(App.Parse.getFieldOrderEmail(), excelFileURL);
 		}
 
 		public void generateExcelFromTemplate ()
